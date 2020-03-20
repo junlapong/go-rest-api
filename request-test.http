@@ -1,0 +1,52 @@
+#
+# REST Client
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+#
+####################################
+
+@host = http://localhost:8081
+
+###
+GET {{host}}/ HTTP/1.1
+
+###
+GET {{host}}/users HTTP/1.1
+
+###
+GET {{host}}/users/1 HTTP/1.1
+
+###
+POST {{host}}/login HTTP/1.1
+Content-Type: application/json
+
+{
+	"email": "steven@gmail.com",
+	"password": "password"
+}
+
+###
+PUT {{host}}/users/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODQ3MTUxMjIsInVzZXJfaWQiOjF9.XBU9J4SnXJhzY_Kbc8kwRRUWPqtIz5yvagrbMf8tsAE
+Content-Type: application/json
+
+{
+  "nickname": "Steven Gerrard",
+  "email": "steven@gmail.com",
+  "password": "s3cr3t"
+}
+
+###
+DELETE {{host}}/users/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE1ODQ3MTUxMjIsInVzZXJfaWQiOjF9.XBU9J4SnXJhzY_Kbc8kwRRUWPqtIz5yvagrbMf8tsAE
+
+###
+POST {{host}}/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "nickname": "Jman Lee",
+  "email": "jman@gmail.com",
+  "password": "s3cr3t"
+}
+
+### END ###
