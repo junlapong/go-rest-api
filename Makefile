@@ -1,9 +1,7 @@
 default: build
 
 build:
-	go build -o rest-api 
+	@CGO_ENABLED=0 go build -o bin/rest-api 
 
 dev:
-	go run main.go
-
-
+	@go run main.go

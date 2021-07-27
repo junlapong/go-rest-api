@@ -1,4 +1,3 @@
+bin/
 *.db
 live-reload
-rest-api
-
